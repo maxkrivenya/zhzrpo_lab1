@@ -85,6 +85,21 @@ public class Complex {
         return this;
     }
 
+    public Complex timesReal(int b){
+        Complex a = this;
+        a.re *= b;
+        a.im *= b;
+        return this;
+    }
+
+    public Complex divideBy(Complex b){
+        Complex a = this;
+        return new Complex(
+                (a.re*b.re)/(b.re*b.re + b.im*b.im),
+                (a.im*b.re - a.re*b.im)/(b.re*b.re + b.im*b.im)
+        );
+    }
+
     /**
      * Square of Complex object's length, we're using square of length to 
      * eliminate the computation of square root
