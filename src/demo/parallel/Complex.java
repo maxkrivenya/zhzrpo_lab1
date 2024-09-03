@@ -95,7 +95,7 @@ public class Complex {
     public Complex divideBy(Complex b){
         Complex a = this;
         return new Complex(
-                (a.re*b.re)/(b.re*b.re + b.im*b.im),
+                (a.re*b.re + a.im*b.im)/(b.re*b.re + b.im*b.im),
                 (a.im*b.re - a.re*b.im)/(b.re*b.re + b.im*b.im)
         );
     }
@@ -107,5 +107,12 @@ public class Complex {
     */
     public double lengthSQ() {
         return re * re + im * im;
+    }
+
+    public double getRe(){
+        return re;
+    }
+    public double getIm(){
+        return im;
     }
 }
