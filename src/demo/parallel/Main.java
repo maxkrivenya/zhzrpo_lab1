@@ -364,7 +364,7 @@ public class Main extends Application {
         antiTranslate.xProperty().bind(canvas.translateXProperty().negate());
         antiTranslate.yProperty().bind(canvas.translateYProperty().negate());
         snapshotParameters.setTransform(antiTranslate);
-        snapshotParameters.setFill(Color.BLACK);
+        snapshotParameters.setFill(Color.GREEN);
 
         //Fetch position when Mouse released
         canvas.setOnMouseReleased(e -> {
@@ -1126,6 +1126,7 @@ public class Main extends Application {
                     stop();
                     finish();
                     return;
+                default: break;
             }
 
             solveXfromY(s);
